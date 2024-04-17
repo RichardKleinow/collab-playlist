@@ -1,0 +1,208 @@
+/**
+ * ´General CSS
+ */
+
+
+
+ 
+ /*
+ * CSS for the search function
+*/
+
+
+
+.collab-spotify #logo {
+    height: auto;
+    width: 20%;
+}
+
+.collab-spotify #container-search-header {
+    max-height: 30vh;
+    min-height: 30vh;
+}
+
+.collab-spotify #container-search-body {
+    max-height: 50vh;
+    min-height: 50vh;
+}
+
+.collab-spotify #img-album {
+    max-width: 60vw;
+    max-height: 60vh;
+}
+
+
+
+
+ /*
+ * CSS for the playlist function
+*/
+
+.collab-spotify #container-playlist-header {
+    max-height: 20vh;
+    min-height: 20vh;
+}
+
+.collab-spotify #container-playlist-body {
+    max-height: 60vh;
+    min-height: 60vh;
+}
+
+
+.collab-spotify #playlist-img {  
+    max-width: 20vw;    
+    max-height: 15vh;
+    display: flex; 
+    justify-content: center; 
+}
+
+.collab-spotify  #playlist-img-link {
+    display: block;
+    height: 100%;    
+}
+
+
+@media (max-width: 768px) {
+
+    /*
+        Media Queries Search Function
+    */
+
+    .collab-spotify #container-search-header {
+        max-height: 50vh;
+        min-height: 30vh;
+    }
+
+    .collab-spotify #add-to-playlist-btn {
+        font-size: 6px;
+    }
+
+
+    .collab-spotify #search-track-artist {
+        font-size: xx-small;
+    }
+
+    .collab-spotify #submit-btn {
+        font-size: xx-small;
+    }
+
+    .collab-spotify #more {
+        font-size: xx-small;
+    }
+
+    /*
+        Media Queries Playlist Function
+    */
+
+    .collab-spotify #playlist-tracks {
+        font-size: small;
+    }
+
+}
+
+
+
+/*
+    Custom Button Color
+*/
+
+
+:root {
+    --btn-color: rgba(236, 159, 135, 1.0);
+    --btn-color-lighter: rgb(253, 188, 167, 1.0);
+    --btn-color-darker: rgb(220, 143, 119, 1.0);
+    --btn-color-focus: rgba(236, 159, 135, 0.5);
+    --btn-color-darker-focus: rgb(220, 143, 119, 0.5);
+}
+
+.collab-spotify  .btn-custom-primary {
+    background-color: var(--btn-color);
+    border-color: var(--btn-color);
+    color: #ffffff; 
+}
+
+.collab-spotify  .btn-custom-primary:hover {
+    background-color: var(--btn-color-darker);
+    border-color: var(--btn-color-darker);
+    color: #ffffff;
+}
+
+.collab-spotify  .btn-custom-primary:focus, .collab-spotify  .btn-custom-primary.focus {
+    box-shadow: 0 0 0 .25rem var(--btn-color-focus);
+}
+
+.collab-spotify  .btn-custom-primary.disabled, .collab-spotify  .btn-custom-primary:disabled {
+    background-color: #DBA48B;
+    border-color: #DBA48B;
+    opacity: 0.65;
+}
+
+.collab-spotify .btn-custom-primary:not(:disabled):not(.disabled):active,
+.collab-spotify .btn-custom-primary:not(:disabled):not(.disabled).active {
+    background-color: var(--btn-color-darker); 
+    border-color: var(--btn-color-darker);
+    color: #ffffff;
+}
+
+.collab-spotify .btn-custom-primary:not(:disabled):not(.disabled):active:focus,
+.collab-spotify .btn-custom-primary:not(:disabled):not(.disabled).active:focus {
+    box-shadow: 0 0 0 .25rem var(--btn-color-darker-focus); 
+}
+
+
+/* Scrollbar */
+
+
+.scrollbar {
+  overflow: overlay
+}
+
+/* total width */
+.scrollbar::-webkit-scrollbar {
+  background-color: rgba(0,0,0,0);
+  width: 16px;
+  height: 16px;
+  z-index: 999999;
+}
+
+/* background of the scrollbar except button or resizer */
+.scrollbar::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0,0);
+}
+
+/* scrollbar itself */
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0);
+  border-radius:16px;
+  border:0px solid #fff;
+}
+
+
+
+/* set button(top and bottom of the scrollbar) */
+.scrollbar::-webkit-scrollbar-button {
+  display:none;
+}
+
+
+/* scrollbar when element is hovered */
+.scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #a0a0a5;
+  border:4px solid #fff;
+}
+
+.scrollbar_dark:hover::-webkit-scrollbar-thumb{
+    background-color: #a0a0a5;
+    border:4px solid #242424;
+}
+
+/* scrollbar when scrollbar is hovered */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color:#a0a0a5;
+    border:4px solid #f4f4f4
+}
+
+.scrollbar_dark::-webkit-scrollbar-thumb:hover {
+    background-color:#a0a0a5;
+    border:4px solid #242424
+}

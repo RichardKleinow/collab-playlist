@@ -1,0 +1,11 @@
+/**
+ * All of the CSS for your admin-facing functionality should be
+ * included in this file.
+ */
+#clear-settings{
+    float: right;
+    background-color: #f44336;
+    border-color: #f44336;
+    color: white;
+
+}
