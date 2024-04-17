@@ -39,13 +39,13 @@ Before configuring the plugin, you need to set up an application in Spotify:
 3. Click on 'Create an App'.
 4. Fill in the form with your application details.
 5. Once the application is created, note down the `Client ID` and `Client Secret`.
-6. In the app settings, add the Redirect URI. This should match the one specified in the plugin settings and be a valid callback endpoint on your website (e.g., `https://yourwebsite.com/spotify-callback`).
+6. In the app settings, add the Redirect URI. This should match your website + "/wp-admin/admin.php?page=collab_playlist" (e.g., `https://yourwebsite.com/wp-admin/admin.php?page=collab_playlist`).
 
 ### Configuring the Plugin
 
 1. Navigate to the plugin settings in your WordPress admin panel.
-2. Enter the `Client ID`, `Client Secret`, and the `Redirect URI` you've set in the Spotify Developer Dashboard.
-3. Save the settings, which should establish a connection to Spotify.
+2. Enter the `Client ID`, `Client Secret`.
+3. Save the settings, which should establish a connection to Spotify and detect the playlist.
 
 ### Usage
 
