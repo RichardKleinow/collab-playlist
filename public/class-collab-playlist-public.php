@@ -111,7 +111,7 @@ class Collab_Playlist_Public {
             'method' => 'POST',
             'httpversion' => '1.1',
             'headers' => array(
-                'Authorization' => "q $credentials",
+                'Authorization' => "Basic $credentials",
                 'Content-Type' => 'application/x-www-form-urlencoded',
             ),
             'body' => array(
