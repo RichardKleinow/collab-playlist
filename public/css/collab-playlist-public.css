@@ -2,9 +2,17 @@
  * ´General CSS
  */
 
+ .collapse:not(.show) {
+    display: -webkit-inline-box;
+}
 
 
- 
+#menu-menue-1 {
+    display: flex;
+    flex-direction: row;
+}
+
+
  /*
  * CSS for the search function
 */
@@ -63,6 +71,13 @@
 
 
 @media (max-width: 768px) {
+
+    /*
+        Bootstrap Fix
+    */
+    .collapse:not(.show) {
+        display: none;
+    }
 
     /*
         Media Queries Search Function

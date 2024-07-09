@@ -415,7 +415,8 @@ class Collab_Playlist_Public {
         $playlist_id = $options['collab_spotify_pl_id'];
 
         // Create url and headers
-        $url = "https://api.spotify.com/v1/playlists/" . $playlist_id . "/tracks";
+        $trackUri = 'spotify:track:' . $trackId;
+        $url = "https://api.spotify.com/v1/playlists/$playlist_id/tracks?uris=" . urlencode($trackUri) . "&position=0";
         $args = array(
             'method' => 'POST',
             'httpversion' => '1.1',
@@ -424,11 +425,9 @@ class Collab_Playlist_Public {
                 'Content-Type' => 'application/json'
             ),
             'body' => array(
-                'uris' => array(
-                    'spotify:track:' . $trackId
-                ),
+                'uris' => array($trackUri),
                 'position' => 0
-            ),
+            )
         );
 
         // Get request
@@ -437,6 +436,7 @@ class Collab_Playlist_Public {
         $body = [];
         if (!is_wp_error($response)) {
             $body = json_decode(wp_remote_retrieve_body($response), true);
+            $body['uri'] = $trackId;
         }
         return $body;
     }
@@ -459,10 +459,10 @@ class Collab_Playlist_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_style('bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3', 'all');
-        wp_enqueue_style('local-theme', get_stylesheet_uri(), array('bootstrap'), '1.0.0', 'all');
+
+        wp_enqueue_style('bootstrap-css-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css', array(), '1.11.3', 'all');
+        wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3', 'all');
         wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/collab-playlist-public.css', array(), $this->version, 'all' );
-        
 	}
 
 	/**
